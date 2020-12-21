@@ -1,0 +1,18 @@
+<div class="header">
+  <span>QUIZ ID - <%= @quiz_id %></span>
+  <span class="date"><%= Time.now.strftime("%^A, %d/%m/%Y") %></span>
+</div>
+
+<div class="questions-section">
+  <% @questions[0, 30].each do |q| %>
+    <div class="question"><%= q[0] %> <%= q[1] %> <%= q[2] %> = <span class="answer"><%= q[3] %></span></div>
+  <% end %>
+</div>
+
+<div class="questions-section">
+  <% @questions[30, 30].each do |q| %>
+    <div class="question"><%= q[0] %> <%= q[1] %> <%= q[2] %> = <span class="answer"><%= q[3] %></span></div>
+  <% end %>
+</div>
+
+<div class="copyright">Designed & Engineered by Eva & Ren</div>
