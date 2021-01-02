@@ -8,4 +8,14 @@ class QuizzesController < ApplicationController
     quiz_id = Rails.application.config.quizzes.keys.sample
     redirect_to action: :show, id: quiz_id
   end
+
+  def show_summer
+    @quiz_id = params[:id].to_i
+    @questions = Rails.application.config.summer_quizzes[@quiz_id]
+  end
+
+  def show_summer_random
+    quiz_id = Rails.application.config.summer_quizzes.keys.sample
+    redirect_to action: :show_summer, id: quiz_id
+  end
 end

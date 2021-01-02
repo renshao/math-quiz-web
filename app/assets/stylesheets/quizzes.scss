@@ -44,10 +44,19 @@ body {
   line-height: 1.6;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+
+  &.summer {
+    display: block;
+  }
 }
+
 
 .question {
   padding: 0.6rem 0 0;
+
+  &.summer {
+    padding-bottom: 2rem;
+  }
 }
 
 .copyright {
