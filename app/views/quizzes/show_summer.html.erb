@@ -4,14 +4,13 @@
 </div>
 
 <div class="questions-section summer">
-  <% @questions[0, 5].each do |q| %>
-    <div class="question summer"><%= q[0] %> <%= q[1] %> <%= q[2] %> = <span class="answer"><%= q[3] %></span></div>
-  <% end %>
-</div>
-
-<div class="questions-section summer">
-  <% @questions[5, 5].each do |q| %>
-    <div class="question summer"><%= q[0] %> <%= q[1] %> <%= q[2] %> = <span class="answer"><%= q[3] %></span></div>
+  <% @questions.each do |q| %>
+    <div class="question summer">
+      <%= q[0] %> <%= q[1] %> <%= q[2] %> =
+      <% if params[:a] %>
+        <span class="answer"><%= q[3] %></span>
+      <% end %>
+    </div>
   <% end %>
 </div>
 

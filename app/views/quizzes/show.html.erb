@@ -5,13 +5,23 @@
 
 <div class="questions-section">
   <% @questions[0, 30].each do |q| %>
-    <div class="question"><%= q[0] %> <%= q[1] %> <%= q[2] %> = <span class="answer"><%= q[3] %></span></div>
+    <div class="question">
+      <%= q[0] %> <%= q[1] %> <%= q[2] %> =
+      <% if params[:a] %>
+        <span class="answer"><%= q[3] %></span>
+      <% end %>
+    </div>
   <% end %>
 </div>
 
 <div class="questions-section">
   <% @questions[30, 30].each do |q| %>
-    <div class="question"><%= q[0] %> <%= q[1] %> <%= q[2] %> = <span class="answer"><%= q[3] %></span></div>
+    <div class="question">
+      <%= q[0] %> <%= q[1] %> <%= q[2] %> =
+      <% if params[:a] %>
+        <span class="answer"><%= q[3] %></span>
+      <% end %>
+    </div>
   <% end %>
 </div>
 
