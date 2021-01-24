@@ -4,11 +4,11 @@ class QuestionGenerator
   end
 
   def gen_questions_set
-    times_questions = []
+    times_division_questions = []
     30.times do
-      q = gen_times
-      redo if times_questions.include? q
-      times_questions << q
+      q = [true, false].sample ? gen_times : gen_division
+      redo if times_division_questions.include? q
+      times_division_questions << q
     end
 
     plus_minus_questions = []
@@ -18,7 +18,7 @@ class QuestionGenerator
 
     {
       id: rand(100000..999999),
-      questions: times_questions + plus_minus_questions
+      questions: times_division_questions + plus_minus_questions
     }
   end
 
@@ -47,5 +47,11 @@ class QuestionGenerator
     a = rand(3..7)
     b = rand(1..9)
     [a, 'x', b, a * b]
+  end
+
+  def gen_division
+    a = rand(3..9)
+    b = rand(2..9)
+    [a * b, '÷', b, a]
   end
 end

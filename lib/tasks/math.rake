@@ -17,7 +17,7 @@ namespace :math do
     generator = SummerQuestionGenerator.new
 
     questions_sets = []
-    3.times { questions_sets << generator.gen_questions_set }
+    10.times { questions_sets << generator.gen_questions_set }
 
     File.write('summer_questions_sets.json', questions_sets.to_json)
   end
