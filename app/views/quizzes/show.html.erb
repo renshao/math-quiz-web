@@ -1,7 +1,7 @@
 <div class="header">
   <span>QUIZ ID - <%= @quiz_id %></span>
   <span class="date"><%= Time.now.in_time_zone('Australia/Sydney').strftime("%^A, %d/%m/%Y") %></span>
-  <span>💩 😼 🌶 🥕</span>
+  <span><%= @emojies.join(' • ') %></span>
 </div>
 
 <div class="questions-section">

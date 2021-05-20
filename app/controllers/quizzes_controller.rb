@@ -1,6 +1,7 @@
 class QuizzesController < ApplicationController
   def show
     @quiz_id = params[:id].to_i
+    @emojies = ['☀️', '🌤', '⚡️', '❄️']
     @questions = Rails.application.config.quizzes[@quiz_id]
   end
 
