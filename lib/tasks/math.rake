@@ -1,4 +1,5 @@
 require 'question_generator'
+require 'kindergarten_question_generator'
 require 'summer_question_generator'
 require 'json'
 
@@ -20,5 +21,14 @@ namespace :math do
     10.times { questions_sets << generator.gen_questions_set }
 
     File.write('summer_questions_sets.json', questions_sets.to_json)
+  end
+
+  task generate_kinder: :environment do
+    generator = KindergartenQuestionGenerator.new
+
+    questions_sets = []
+    100.times { questions_sets << generator.gen_questions_set }
+
+    File.write('kinder_questions_sets.json', questions_sets.to_json)
   end
 end
