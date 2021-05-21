@@ -12,8 +12,9 @@ RUN apt-get update && apt-get install -y yarn
 # Run yarn install to install JavaScript dependencies.
 RUN yarn install --check-files
 
-RUN RAILS_ENV=production bundle exec rake assets:precompile
+ENV RAILS_ENV=production
+RUN bundle exec rake assets:precompile
 
-# Set "rails server -b 0.0.0.0" as the command to
-# run when this container starts.
-CMD ["bundle", "exec", "rails", "server", "-e", "production"]
+ENV RAILS_SERVE_STATIC_FILES=true
+
+CMD ["bundle", "exec", "rails", "server"]
