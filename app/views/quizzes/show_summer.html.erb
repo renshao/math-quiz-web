@@ -1,6 +1,10 @@
 <div class="header">
-  <span>QUIZ ID - <%= @quiz_id %></span>
-  <span class="date"><%= Time.now.in_time_zone('Australia/Sydney').strftime("%^A, %d/%m/%Y") %></span>
+  <span class="quiz-info">
+    <span>QU</span><span>IZ</span> <span>ID -</span> <span><%= @quiz_id %></span>
+    <% @time = Time.now.in_time_zone('Australia/Sydney') %>
+    <span><%= @time.strftime("%^A,") %></span>
+    <span><%= @time.strftime("%d") %></span><span><%= @time.strftime("/%m") %></span><span><%= @time.strftime("/%Y") %></span>
+  </span>
 </div>
 
 <div class="questions-section summer">

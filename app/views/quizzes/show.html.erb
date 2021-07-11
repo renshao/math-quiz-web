@@ -18,7 +18,14 @@
 <div class="questions-section">
   <% @questions[30, 30].each do |q| %>
     <div class="question">
-      <%= q[0] %> <%= q[1] %> <%= q[2] %> =
+      <span class="number">
+        <%= q[0].to_s.chars().map { |c| content_tag(:span, c) }.join.html_safe %>
+      </span>
+      <%= q[1] %>
+      <span class="number">
+        <%= q[2].to_s.chars().map { |c| content_tag(:span, c) }.join.html_safe %>
+      </span>
+      =
       <% if params[:a] %>
         <span class="answer"><%= q[3] %></span>
       <% end %>

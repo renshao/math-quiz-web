@@ -39,12 +39,12 @@ class SummerQuestionGenerator
   def gen_icecream_questions
     a = rand(1..9)
     b = rand(1..10-a)
-    [Array.new(a) { '☃️' }.join, '+', Array.new(b) { '❄️' }.join, a + b]
+    [Array.new(a) { '🍦' }.join, '+', Array.new(b) { '🧁' }.join, a + b]
   end
 
   def gen_frozen_questions
     a = rand(1..9)
     b = rand(1..10-a)
-    [Array.new(a) { '🐟' }.join, '+', Array.new(b) { '🦄' }.join, a + b]
+    [Array.new(a) { '🍿' }.join, '+', Array.new(b) { '🍱' }.join, a + b]
   end
 end
