@@ -10,6 +10,17 @@ class QuizzesController < ApplicationController
     redirect_to action: :show, id: quiz_id
   end
 
+  def show_bin_hex_random
+    quiz_id = Rails.application.config.bin_hex_quizzes.keys.sample
+    redirect_to action: :show_bin_hex, id: quiz_id
+  end
+
+  def show_bin_hex
+    @quiz_id = params[:id].to_i
+    @emojies = ['☀️', '🌤', '⚡️', '❄️']
+    @quiz = Rails.application.config.bin_hex_quizzes[@quiz_id]
+  end
+
   def show_kinder
     @quiz_id = params[:id].to_i
     @emojies = ['☀️', '🌤', '⚡️', '❄️']

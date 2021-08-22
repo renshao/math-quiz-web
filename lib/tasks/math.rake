@@ -1,4 +1,5 @@
 require 'question_generator'
+require 'bin_hex_question_generator'
 require 'kindergarten_question_generator'
 require 'summer_question_generator'
 require 'json'
@@ -12,6 +13,15 @@ namespace :math do
     1000.times { questions_sets << generator.gen_questions_set }
 
     File.write('questions_sets.json', questions_sets.to_json)
+  end
+
+  task generate_bin_hex: :environment do
+    generator = BinHexQuestionGenerator.new
+
+    questions_sets = []
+    1000.times { questions_sets << generator.gen_questions_set }
+
+    File.write('bin_hex_questions_sets.json', questions_sets.to_json)
   end
 
   task generate_summer: :environment do
