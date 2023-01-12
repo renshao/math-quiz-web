@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get 'quizzes-kinder/random', to: 'quizzes#show_kinder_random'
   get 'quizzes-kinder(/:id)', to: 'quizzes#show_kinder'
 
+  get 'quizzes-year1/random', to: 'quizzes#show_year1_random'
+  get 'quizzes-year1(/:id)', to: 'quizzes#show_year1'
+
   get 'quizzes-summer/random', to: 'quizzes#show_summer_random'
   get 'quizzes-summer(/:id)', to: 'quizzes#show_summer'
 end
