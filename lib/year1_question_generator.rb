@@ -5,7 +5,7 @@ class Year1QuestionGenerator
   
     def gen_questions_set
       questions = []
-      21.times do
+      54.times do
         q = gen_questions()
         redo if questions.include? q
         questions << q
@@ -18,8 +18,11 @@ class Year1QuestionGenerator
     end
   
     def gen_questions
-      a = rand(1..5)
-      b = rand(1..5)
+      is_one = rand(0..200)
+      a = is_one == 0 ? 1 : rand(2..10)
+
+      is_one = rand(0..200)
+      b = is_one == 0 ? 1 : rand(2..5)
 
       sign = 'x'
       answer = a * b
