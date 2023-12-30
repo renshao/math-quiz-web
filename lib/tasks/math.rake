@@ -3,6 +3,7 @@ require 'bin_hex_question_generator'
 require 'kindergarten_question_generator'
 require 'summer_question_generator'
 require 'year1_question_generator'
+require 'year1_plus_generator'
 require 'json'
 
 namespace :math do
@@ -50,5 +51,14 @@ namespace :math do
     500.times { questions_sets << generator.gen_questions_set }
 
     File.write('year1_questions_sets.json', questions_sets.to_json)
+  end
+
+  task generate_year1_plus: :environment do
+    generator = Year1PlusGenerator.new
+
+    questions_sets = []
+    500.times { questions_sets << generator.gen_questions_set }
+
+    File.write('year1_plus_sets.json', questions_sets.to_json)
   end
 end
