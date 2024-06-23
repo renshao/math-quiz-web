@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get 'quizzes-year1-plus/random', to: 'quizzes#show_year1_plus_random'
   get 'quizzes-year1-plus(/:id)', to: 'quizzes#show_year1_plus'
 
+  get 'quizzes-year2-times/random', to: 'quizzes#show_year2_times_random'
+  get 'quizzes-year2-times(/:id)', to: 'quizzes#show_year2_times'
+
   get 'quizzes-summer/random', to: 'quizzes#show_summer_random'
   get 'quizzes-summer(/:id)', to: 'quizzes#show_summer'
 end
