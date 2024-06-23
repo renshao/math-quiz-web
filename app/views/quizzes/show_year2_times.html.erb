@@ -1,0 +1,18 @@
+<div class="header">
+  <span>QUIZ ID - <%= @quiz_id %></span>
+  <span class="date"><%= Time.now.in_time_zone('Australia/Sydney').strftime("%^A, %d/%m/%Y") %></span>
+  <span><%= @emojies.join(' • ') %></span>
+</div>
+
+<div class="questions-section">
+  <% @questions.each do |q| %>
+    <div class="question">
+      <%= q[0] %> <%= q[1] %> <%= q[2] %> =
+      <% if params[:a] %>
+        <span class="answer"><%= q[3] %></span>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<div class="copyright">Designed & Engineered by Eva & Ren</div>

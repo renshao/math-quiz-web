@@ -54,6 +54,17 @@ class QuizzesController < ApplicationController
     redirect_to action: :show_year1_plus, id: quiz_id
   end
 
+  def show_year2_times
+    @quiz_id = params[:id].to_i
+    @emojies = generate_emojis
+    @questions = Rails.application.config.year2_times_quizzes[@quiz_id]
+  end
+
+  def show_year2_times_random
+    quiz_id = Rails.application.config.year2_times_quizzes.keys.sample
+    redirect_to action: :show_year2_times, id: quiz_id
+  end
+
   def show_summer
     @quiz_id = params[:id].to_i
     @questions = Rails.application.config.summer_quizzes[@quiz_id]
