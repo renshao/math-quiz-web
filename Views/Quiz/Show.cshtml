@@ -1,0 +1,24 @@
+@model math_quiz_web_aspnet.Models.Quiz
+@{
+    var date = DateTime.Now.ToString("dddd, dd/MMM/yyyy");
+    var emojis = math_quiz_web_aspnet.Controllers.QuizController.GenerateEmojis();
+}
+
+<div class="header">
+  <span>QUIZ ID - @Model.Id</span>
+  <span class="date">@date</span>
+  <span>@emojis</span>
+</div>
+
+@foreach (var section in Model.Sections) {
+    <div class="questions-section">
+        @foreach (var q in section.Questions) {
+            <div class="question">
+                @q.A @q.Operation @q.B =
+                @if (ViewData["showAnswer"] != null) {
+                    <span class="answer">@q.Answer</span>
+                }
+            </div>
+        }
+    </div>
+}

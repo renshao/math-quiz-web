@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="home">
+  <div class="section">
+    <h1>Original Math Quiz</h1>
+    <a asp-controller="Quiz" asp-action="Random" asp-route-quizType="Original">Generate</a>
+  </div>
+
+  <div class="section">
+    <h1>Math Quiz with Binary & Hex</h1>
+    <a asp-controller="Quiz" asp-action="Random" asp-route-quizType="OriginalBinHex">Generate</a>
+  </div>
+
+  <div class="section">
+    <h1>Times Table - full</h1>
+    <a asp-controller="Quiz" asp-action="Random" asp-route-quizType="TimesTableFull">Generate</a>
+  </div>
+
+  <div class="section">
+    <h1>Times Table - up to 5</h1>
+    <a asp-controller="Quiz" asp-action="Random" asp-route-quizType="TimesTableUpToFive">Generate</a>
+  </div>
+
+  <div class="section">
+    <h1>Plus - double digit</h1>
+    <a asp-controller="Quiz" asp-action="Random" asp-route-quizType="PlusDoubleDigit">Generate</a>
+  </div>
+
+    <div class="section">
+    <h1>Plus - single digit</h1>
+    <a asp-controller="Quiz" asp-action="Random" asp-route-quizType="PlusSingleDigit">Generate</a>
+  </div>
+
+  <div class="section">
+    <h1>Summer</h1>
+    <a asp-controller="Quiz" asp-action="Random" asp-route-quizType="Summer">Generate</a>
+  </div>
+</div>

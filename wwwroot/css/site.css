@@ -1,0 +1,113 @@
+body {
+  font-size: 20px;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.home {
+  text-align: center;
+  background: #d33847;
+  min-height: 100vh;
+
+  color: #fff;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+
+  a {
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 2px;
+    text-decoration: none;
+    padding: 0.4rem 2rem;
+
+    &:hover {
+      background-color: rgba(255,255,255,.15);
+    }
+  }
+
+  .section {
+    margin-top: 6rem;
+  }
+}
+
+.header {
+  font-size: 0.8em;
+  margin-bottom: 1rem;
+
+  .date {
+    margin: 0 2rem;
+  }
+}
+
+.questions-section {
+  margin-bottom: 2rem;
+  font-family: "Lucida Console", Monaco, monospace;
+  line-height: 1.6;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  &.summer {
+    display: block;
+  }
+}
+
+
+.question {
+  padding: 0.6rem 0 0;
+
+  &.summer {
+    padding-bottom: 2rem;
+  }
+
+  span.number > span {
+    &:nth-last-child(1) {
+      color: rgb(0, 0, 0);
+    }
+
+    &:nth-last-child(2) {
+      color: rgb(104, 104, 104);
+    }
+
+    &:nth-last-child(3) {
+      color: rgb(109, 79, 114);
+    }
+  }
+}
+
+.quiz-info {
+  font-weight: 700;
+  font-size: 1.2em;
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+  > span {
+    &:nth-child(1) { color: rgb(216, 30, 30); }
+    &:nth-child(2) { color: rgb(216, 132, 30); }
+    &:nth-child(3) { color: rgb(255, 225, 0); }
+    &:nth-child(4) { color: rgb(69, 201, 3); }
+    &:nth-child(5) { color: rgb(0, 220, 154); }
+    &:nth-child(6) { color: rgb(0, 117, 220); }
+    &:nth-child(7) { color: rgb(139, 0, 220); }
+    &:nth-child(8) { color: rgb(215, 90, 128); }
+  }
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #a0a0a0;
+}
+
+@media print {
+  .answer {
+    display: none;
+  }
+}
