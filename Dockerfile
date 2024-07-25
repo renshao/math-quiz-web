@@ -1,12 +1,15 @@
-FROM ruby:2.7.7
-WORKDIR /app
-COPY . /app
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
+WORKDIR /App
 
-RUN bundle install --deployment
+# Copy everything
+COPY . ./
+# Restore as distinct layers
+RUN dotnet restore
+# Build and publish a release
+RUN dotnet publish -c Release -o out
 
-ENV RAILS_ENV=production
-RUN bundle exec rake assets:precompile
-
-ENV RAILS_SERVE_STATIC_FILES=true
-
-CMD ["bundle", "exec", "rails", "server"]
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
+WORKDIR /App
+COPY --from=build-env /App/out .
+ENTRYPOINT ["./math-quiz-web-aspnet"]

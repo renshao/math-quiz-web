@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    @RenderBody()
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <div class="copyright">&copy; <span id="year"></span> - Designed & Engineered by Shao family</div>
+            <div class="copyright">v1 built with Ruby on Rails. v2 built with ASP.NET Core.</div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
