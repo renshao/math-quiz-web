@@ -1,14 +1,19 @@
 @model math_quiz_web_aspnet.Models.Quiz
 @{
-    var date = DateTime.Now.ToString("dddd, dd/MMM/yyyy");
     var emojis = math_quiz_web_aspnet.Controllers.QuizController.GenerateEmojis();
 }
 
 <div class="header">
   <span>QUIZ ID - @Model.Id</span>
-  <span class="date">@date</span>
+  <span class="date"></span>
   <span>@emojis</span>
 </div>
+
+<script>
+    const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let date = new Date();
+    document.querySelector('.date').innerText = `${DAYS[date.getDay()]} ${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+</script>
 
 @foreach (var section in Model.Sections) {
     <div class="questions-section">
