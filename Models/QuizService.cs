@@ -131,7 +131,7 @@ public class QuizService
         }
         else
         {
-           return jsonElement.GetString();
+           return jsonElement.GetString() ?? "";
         }
     }
 }

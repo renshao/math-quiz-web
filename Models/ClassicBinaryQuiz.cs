@@ -7,8 +7,8 @@ public class ClassicBinaryQuiz : Quiz
         
     }
 
-    public List<Question> timesDivisionQuestions { get; set; }
-    public List<Question> plusMinusQuestions { get; set; }
-    public List<Question> binaryQuestions { get; set; }
-    public List<Question> hexQuestions { get; set; }
+    public List<Question> timesDivisionQuestions { get; set; } = [];
+    public List<Question> plusMinusQuestions { get; set; } = [];
+    public List<Question> binaryQuestions { get; set; } = [];
+    public List<Question> hexQuestions { get; set; } = [];
 }
